@@ -65,12 +65,16 @@ public:
 
     bool isStateChangeEvent() const;
 
+    bool logged() const;
+    void setLogged(bool logged);
+
 private:
     EventTypeId m_eventTypeId;
     ThingId m_thingId;
     ParamList m_params;
 
     bool m_isStateChangeEvent;
+    bool m_logged = false;
 };
 Q_DECLARE_METATYPE(Event)
 QDebug operator<<(QDebug dbg, const Event &event);
